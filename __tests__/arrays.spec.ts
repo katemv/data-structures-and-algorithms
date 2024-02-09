@@ -2,6 +2,11 @@ import { mergeSortedArrays, mergeSortedArraysLoop } from "../arrays/88_mergeSort
 import { twoSum, twoSumMap } from "../arrays/1_twoSum";
 import { maximumSubArray, maximumSubArrayBF } from "../arrays/53_maximumSubArray";
 import { moveZeros, moveZerosWithCopy, moveZerosWithSplice } from "../arrays/283_moveZeros";
+import {
+    containsDuplicate,
+    containsDuplicateWithSet,
+    containsDuplicateWithSetAndLoop
+} from "../arrays/217_containsDuplicate";
 
 describe("merge sorted arrays", () => {
     it("should merge two arrays in the correct order using a loop", () => {
@@ -60,5 +65,35 @@ describe("move zeros", () => {
 
     it("should move all 0's to the end of it while maintaining the relative order of the non-zero elements with copy", () => {
         expect(moveZerosWithCopy([0,0,1,0,3,12])).toEqual([1,3,12,0,0,0]);
+    });
+});
+
+describe("contains duplicate", () => {
+    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct case 1", () => {
+        expect(containsDuplicate([1,2,3,1])).toBe(true);
+    });
+
+    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct case 2", () => {
+        expect(containsDuplicate([1,2,3,4])).toEqual(false);
+    });
+
+    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct case 3", () => {
+        expect(containsDuplicate([1,1,1,3,3,4,3,2,4,2])).toEqual(true);
+    });
+
+    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct case 1:set", () => {
+        expect(containsDuplicateWithSet([1,2,3,1])).toBe(true);
+    });
+
+    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct case 2:set", () => {
+        expect(containsDuplicateWithSet([1,2,3,4])).toEqual(false);
+    });
+
+    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct case 1:set&loop", () => {
+        expect(containsDuplicateWithSetAndLoop([1,2,3,1])).toBe(true);
+    });
+
+    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct case 2:set&loop", () => {
+        expect(containsDuplicateWithSetAndLoop([1,2,3,4])).toEqual(false);
     });
 });
