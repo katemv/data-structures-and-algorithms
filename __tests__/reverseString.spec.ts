@@ -1,6 +1,6 @@
 import { reverseString, reverseStringWithLoop } from "../index";
 
-describe("reverse string", () => {
+describe("Reverse string", () => {
     it('should reverse a string', () => {
         expect(reverseString("Hello world!")).toBe("!dlrow olleH");
     });

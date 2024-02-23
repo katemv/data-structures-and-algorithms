@@ -1,14 +1,15 @@
-import { mergeSortedArrays, mergeSortedArraysLoop } from "../arrays/88_mergeSortedArrays";
-import { twoSum, twoSumMap } from "../arrays/1_twoSum";
-import { maximumSubArray, maximumSubArrayBF } from "../arrays/53_maximumSubArray";
 import { moveZeros, moveZerosWithCopy, moveZerosWithSplice } from "../arrays/283_moveZeros";
+import { mergeSortedArrays, mergeSortedArraysLoop } from "../arrays/88_mergeSortedArrays";
+import { maximumSubArray, maximumSubArrayBF } from "../arrays/53_maximumSubArray";
+import { twoSum, twoSumMap } from "../arrays/1_twoSum";
+import { rotateArray } from "../arrays/189_rotate_array";
 import {
     containsDuplicate,
     containsDuplicateWithSet,
     containsDuplicateWithSetAndLoop
 } from "../arrays/217_containsDuplicate";
 
-describe("merge sorted arrays", () => {
+describe("Merge sorted arrays", () => {
     it("should merge two arrays in the correct order using a loop", () => {
         expect(mergeSortedArraysLoop([0,3,4,31], [4,6,30])).toEqual([0,3,4,4,6,30,31]);
     });
@@ -18,7 +19,7 @@ describe("merge sorted arrays", () => {
     });
 });
 
-describe("two sum", () => {
+describe("Two sum", () => {
     it("should return indices of the two numbers such that they add up to target", () => {
         expect(twoSum([3,2,4], 6)).toEqual([1,2]);
     });
@@ -36,7 +37,7 @@ describe("two sum", () => {
     });
 });
 
-describe("maximum sub array", () => {
+describe("Maximum sub array", () => {
     it("should find the subarray with the largest sum, and return its sum", () => {
         expect(maximumSubArray([-2,1,-3,4,-1,2,1,-5,4])).toEqual(6);
     });
@@ -54,7 +55,7 @@ describe("maximum sub array", () => {
     });
 });
 
-describe("move zeros", () => {
+describe("Move zeros", () => {
     it("should move all 0's to the end of it while maintaining the relative order of the non-zero elements in-place", () => {
         expect(moveZeros([0,0,1,0,3,12])).toEqual([1,3,12,0,0,0]);
     });
@@ -68,17 +69,17 @@ describe("move zeros", () => {
     });
 });
 
-describe("contains duplicate", () => {
+describe("Contains duplicate", () => {
     it("should  return true if any value appears at least twice in the array, and return false if every element is distinct case 1", () => {
         expect(containsDuplicate([1,2,3,1])).toBe(true);
     });
 
     it("should  return true if any value appears at least twice in the array, and return false if every element is distinct case 2", () => {
-        expect(containsDuplicate([1,2,3,4])).toEqual(false);
+        expect(containsDuplicate([1,2,3,4])).toBe(false);
     });
 
     it("should  return true if any value appears at least twice in the array, and return false if every element is distinct case 3", () => {
-        expect(containsDuplicate([1,1,1,3,3,4,3,2,4,2])).toEqual(true);
+        expect(containsDuplicate([1,1,1,3,3,4,3,2,4,2])).toBe(true);
     });
 
     it("should  return true if any value appears at least twice in the array, and return false if every element is distinct case 1:set", () => {
@@ -86,7 +87,7 @@ describe("contains duplicate", () => {
     });
 
     it("should  return true if any value appears at least twice in the array, and return false if every element is distinct case 2:set", () => {
-        expect(containsDuplicateWithSet([1,2,3,4])).toEqual(false);
+        expect(containsDuplicateWithSet([1,2,3,4])).toBe(false);
     });
 
     it("should  return true if any value appears at least twice in the array, and return false if every element is distinct case 1:set&loop", () => {
@@ -94,6 +95,16 @@ describe("contains duplicate", () => {
     });
 
     it("should  return true if any value appears at least twice in the array, and return false if every element is distinct case 2:set&loop", () => {
-        expect(containsDuplicateWithSetAndLoop([1,2,3,4])).toEqual(false);
+        expect(containsDuplicateWithSetAndLoop([1,2,3,4])).toBe(false);
+    });
+});
+
+describe("Rotate array", () => {
+    it("rotate the array to the right by k steps: case 1", () => {
+        expect(rotateArray([1,2,3,4,5,6,7], 3)).toEqual([5,6,7,1,2,3,4]);
+    });
+
+    it("rotate the array to the right by k steps: case 2", () => {
+        expect(rotateArray([-1,-100,3,99], 2)).toEqual([3,99,-1,-100]);
     });
 });
