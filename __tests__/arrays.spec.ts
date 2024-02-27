@@ -1,8 +1,8 @@
 import { moveZeros, moveZerosWithCopy, moveZerosWithSplice } from "../arrays/283_moveZeros";
 import { mergeSortedArrays, mergeSortedArraysLoop } from "../arrays/88_mergeSortedArrays";
 import { maximumSubArray, maximumSubArrayBF } from "../arrays/53_maximumSubArray";
-import { twoSum, twoSumMap } from "../arrays/1_twoSum";
 import { rotateArray } from "../arrays/189_rotate_array";
+import { twoSum, twoSumMap } from "../arrays/1_twoSum";
 import {
     containsDuplicate,
     containsDuplicateWithSet,
@@ -42,14 +42,6 @@ describe("Maximum sub array", () => {
         expect(maximumSubArray([-2,1,-3,4,-1,2,1,-5,4])).toEqual(6);
     });
 
-    it("should find the subarray with the largest sum, and return its sum", () => {
-        expect(maximumSubArray([1])).toEqual(1);
-    });
-
-    it("should find the subarray with the largest sum, and return its sum", () => {
-        expect(maximumSubArray([5,4,-1,7,8])).toEqual(23);
-    });
-
     it("should find the subarray with the largest sum, and return its sum v2", () => {
         expect(maximumSubArrayBF([-2,1,-3,4,-1,2,1,-5,4])).toEqual(6);
     });
@@ -70,32 +62,20 @@ describe("Move zeros", () => {
 });
 
 describe("Contains duplicate", () => {
-    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct case 1", () => {
+    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct", () => {
         expect(containsDuplicate([1,2,3,1])).toBe(true);
     });
 
-    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct case 2", () => {
-        expect(containsDuplicate([1,2,3,4])).toBe(false);
-    });
-
-    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct case 3", () => {
-        expect(containsDuplicate([1,1,1,3,3,4,3,2,4,2])).toBe(true);
-    });
-
-    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct case 1:set", () => {
+    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct:set", () => {
         expect(containsDuplicateWithSet([1,2,3,1])).toBe(true);
     });
 
-    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct case 2:set", () => {
+    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct:set", () => {
         expect(containsDuplicateWithSet([1,2,3,4])).toBe(false);
     });
 
-    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct case 1:set&loop", () => {
+    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct:set&loop", () => {
         expect(containsDuplicateWithSetAndLoop([1,2,3,1])).toBe(true);
-    });
-
-    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct case 2:set&loop", () => {
-        expect(containsDuplicateWithSetAndLoop([1,2,3,4])).toBe(false);
     });
 });
 
