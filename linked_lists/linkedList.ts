@@ -110,6 +110,7 @@ class LinkedList<T> {
         return currentNode;
     }
 
+    // 206. Reverse Linked List
     public reverse() {
         if (!this.head || !this.head.next) {
             return this;
@@ -147,8 +148,6 @@ class LinkedList<T> {
             array.push(currentNode.value);
             currentNode = currentNode.next;
         }
-
-        console.log(array);
 
         return array;
     }

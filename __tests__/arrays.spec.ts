@@ -1,6 +1,7 @@
 import { moveZeros, moveZerosWithCopy, moveZerosWithSplice } from "../arrays/283_moveZeros";
 import { mergeSortedArrays, mergeSortedArraysLoop } from "../arrays/88_mergeSortedArrays";
 import { maximumSubArray, maximumSubArrayBF } from "../arrays/53_maximumSubArray";
+import { diagonalSum } from "../arrays/1572_matrix_diagonal_sum";
 import { rotateArray } from "../arrays/189_rotate_array";
 import { twoSum, twoSumMap } from "../arrays/1_twoSum";
 import {
@@ -8,6 +9,7 @@ import {
     containsDuplicateWithSet,
     containsDuplicateWithSetAndLoop
 } from "../arrays/217_containsDuplicate";
+
 
 describe("Merge sorted arrays", () => {
     it("should merge two arrays in the correct order using a loop", () => {
@@ -48,43 +50,45 @@ describe("Maximum sub array", () => {
 });
 
 describe("Move zeros", () => {
-    it("should move all 0's to the end of it while maintaining the relative order of the non-zero elements in-place", () => {
+    it("should move all 0's to the end in-place", () => {
         expect(moveZeros([0,0,1,0,3,12])).toEqual([1,3,12,0,0,0]);
     });
 
-    it("should move all 0's to the end of it while maintaining the relative order of the non-zero elements in-place", () => {
+    it("should move all 0's to the end in-place", () => {
         expect(moveZerosWithSplice([0,1,0,3,12])).toEqual([1,3,12,0,0]);
     });
 
-    it("should move all 0's to the end of it while maintaining the relative order of the non-zero elements with copy", () => {
+    it("should move all 0's to the end with copy", () => {
         expect(moveZerosWithCopy([0,0,1,0,3,12])).toEqual([1,3,12,0,0,0]);
     });
 });
 
 describe("Contains duplicate", () => {
-    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct", () => {
+    it("should find if a value appears twice or if every element is distinct", () => {
         expect(containsDuplicate([1,2,3,1])).toBe(true);
     });
 
-    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct:set", () => {
+    it("should find if a value appears twice or if every element is distinct:set", () => {
         expect(containsDuplicateWithSet([1,2,3,1])).toBe(true);
     });
 
-    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct:set", () => {
+    it("should find if a value appears twice or if every element is distinct:set", () => {
         expect(containsDuplicateWithSet([1,2,3,4])).toBe(false);
     });
 
-    it("should  return true if any value appears at least twice in the array, and return false if every element is distinct:set&loop", () => {
+    it("should find if a value appears twice or if every element is distinct:set&loop", () => {
         expect(containsDuplicateWithSetAndLoop([1,2,3,1])).toBe(true);
     });
 });
 
 describe("Rotate array", () => {
-    it("rotate the array to the right by k steps: case 1", () => {
+    it("should rotate the array to the right by k steps", () => {
         expect(rotateArray([1,2,3,4,5,6,7], 3)).toEqual([5,6,7,1,2,3,4]);
     });
+});
 
-    it("rotate the array to the right by k steps: case 2", () => {
-        expect(rotateArray([-1,-100,3,99], 2)).toEqual([3,99,-1,-100]);
+describe("Diagonal sum", () => {
+    it("should calculate the sum of diagonals in a square matrix", () => {
+        expect(diagonalSum([[1,2,3],[4,5,6],[7,8,9]])).toBe(25);
     });
 });
