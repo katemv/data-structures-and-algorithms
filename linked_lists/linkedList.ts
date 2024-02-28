@@ -110,6 +110,34 @@ class LinkedList<T> {
         return currentNode;
     }
 
+    public reverse() {
+        if (!this.head || !this.head.next) {
+            return this;
+        }
+
+        let firstNode: Nullable<Node<T>> = this.head;
+        // Update tail to point to the current head
+        this.tail = this.head;
+        let secondNode: Nullable<Node<T>> = firstNode.next;
+        // Set the first node's next pointer to null
+        firstNode.next = null;
+
+        while (secondNode) {
+            const temp = secondNode.next;
+            // Reverse the pointer to point to the previous node
+            secondNode.next = firstNode;
+
+            // Move pointers forward
+            firstNode = secondNode;
+            secondNode = temp;
+        }
+
+        // Update the head of the list to point to the last node (which is now the first)
+        this.head = firstNode;
+
+        return this;
+    }
+
     public printList() {
         const array = [];
 

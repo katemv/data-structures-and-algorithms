@@ -34,6 +34,10 @@ describe("LinkedList", () => {
         myLinkedList.remove(2);
         expect(myLinkedList.printList()).toEqual([5, 10, 1]);
     });
+
+    it("should reverse the list", () => {
+        expect(myLinkedList.reverse().printList()).toEqual([1,16,10,5]);
+    });
 });
 
 describe("LinkedList Problems", () => {
