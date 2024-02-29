@@ -2,7 +2,10 @@
     * Sorts an array using the bubble sort algorithm.
     * @param array The array to be sorted.
     * @returns The sorted array.
+    * Time: O(n^2)
+    * Space: O(1)
  */
+
 export const bubbleSort = (array: number[]): number[] => {
     // Iterate over the array from the end to the beginning
     for (let j = array.length; j >= 0; j--) {
