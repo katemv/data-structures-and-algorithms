@@ -74,7 +74,6 @@ class LinkedList<T> {
             this.head = this.head!.next;
             this.length --;
 
-
             return this;
         }
 
