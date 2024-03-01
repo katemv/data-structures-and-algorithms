@@ -1,4 +1,4 @@
-import HashTable from "../hash_tables/hashTable";
+import HashTable from "./hashTable";
 
 describe("Hash Table", () => {
     let myHashTable = new HashTable<number>(5);

@@ -1,5 +1,5 @@
-import LinkedList from "../linked_lists/linkedList";
-import { removeNthFromEnd } from "../linked_lists/19_remove_nth_node_from_end_of_list";
+import LinkedList from "./linkedList";
+import { removeNthFromEnd } from "./19_remove_nth_node_from_end_of_list";
 
 describe("LinkedList", () => {
     let myLinkedList = new LinkedList<number>(5);

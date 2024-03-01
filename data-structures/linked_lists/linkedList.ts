@@ -1,4 +1,4 @@
-import { Nullable } from "../utils/types";
+import { Nullable } from "../../utils/types";
 
 export class Node<T> {
     public value: T;

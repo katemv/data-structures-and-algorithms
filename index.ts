@@ -1,16 +1,5 @@
-// Create a function that reverses a string
-export const reverseString = (string: string): string => {
-    return [...string] // convert a string to array
-        .reverse() // reverse array
-        .join(""); // convert back to string
-}
+import { mergeSort } from "./sorting/mergeSort";
 
-export const reverseStringWithLoop = (string: string): string => {
-    let result = [];
+const input = [99, 44, 6, 2, 8];
 
-    for (let i = string.length - 1; i >= 0; i--) {
-        result.push(string[i]);
-    }
-
-    return result.join("");
-}
+console.log(mergeSort(input));

@@ -1,15 +1,14 @@
-import { moveZeros, moveZerosWithCopy, moveZerosWithSplice } from "../arrays/283_moveZeros";
-import { mergeSortedArrays, mergeSortedArraysLoop } from "../arrays/88_mergeSortedArrays";
-import { maximumSubArray, maximumSubArrayBF } from "../arrays/53_maximumSubArray";
-import { diagonalSum } from "../arrays/1572_matrix_diagonal_sum";
-import { rotateArray } from "../arrays/189_rotate_array";
-import { twoSum, twoSumMap } from "../arrays/1_twoSum";
+import { moveZeros, moveZerosWithCopy, moveZerosWithSplice } from "./283_moveZeros";
+import { mergeSortedArrays, mergeSortedArraysLoop } from "./88_mergeSortedArrays";
+import { maximumSubArray, maximumSubArrayBF } from "./53_maximumSubArray";
+import { diagonalSum } from "./1572_matrix_diagonal_sum";
+import { rotateArray } from "./189_rotate_array";
+import { twoSum, twoSumMap } from "./1_twoSum";
 import {
     containsDuplicate,
     containsDuplicateWithSet,
     containsDuplicateWithSetAndLoop
-} from "../arrays/217_containsDuplicate";
-
+} from "./217_containsDuplicate";
 
 describe("Merge sorted arrays", () => {
     it("should merge two arrays in the correct order using a loop", () => {
