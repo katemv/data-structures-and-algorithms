@@ -1,19 +1,10 @@
-import { Nullable } from "../../utils/types";
-
-export class Node<T> {
-    public value: T;
-    public next: Nullable<Node<T>>;
-
-    constructor(value: T) {
-        this.value = value;
-        this.next = null;
-    }
-}
+import { Nullable, Node } from "../../utils/types";
 
 class LinkedList<T> {
-    public head: Nullable<Node<T>>;
+    private head: Nullable<Node<T>>;
     private tail: Node<T>;
     private length: number;
+
     constructor(value: T) {
         this.head = {
             value,
@@ -22,6 +13,10 @@ class LinkedList<T> {
 
         this.tail = this.head;
         this.length = 1;
+    }
+
+    public getHead() {
+        return this.head;
     }
 
     // O(1)
