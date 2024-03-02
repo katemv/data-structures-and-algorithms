@@ -1,5 +1,5 @@
 import { Node } from "../../utils/types";
-import { Print } from "../../utils/print";
+import Print from "../../utils/print";
 
 /**
     * Can be implemented with both Array and LinkedList

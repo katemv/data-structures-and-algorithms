@@ -1,5 +1,5 @@
 import { Node } from "../../utils/types";
-import { Print } from "../../utils/print";
+import Print from "../../utils/print";
 
 class Queue<T> extends Print<T> {
     private length: number;

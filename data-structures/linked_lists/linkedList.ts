@@ -1,5 +1,5 @@
 import { Nullable, Node } from "../../utils/types";
-import { Print } from "../../utils/print";
+import Print from "../../utils/print";
 
 class LinkedList<T> extends Print<T>  {
     private tail: Node<T>;

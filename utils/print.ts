@@ -1,6 +1,6 @@
 import { Node, Nullable } from "./types";
 
-export abstract class Print<T> {
+abstract class Print<T> {
     protected head:Nullable<Node<T>> = null;
 
     public print() {
@@ -16,3 +16,5 @@ export abstract class Print<T> {
         return array;
     }
 }
+
+export default Print;

@@ -1,5 +1,6 @@
 import Stack from "./stack";
 import Queue from "./queue";
+import { MyQueue } from "./232_implement_queue_using_stacks";
 
 describe("Stack", () => {
     let myStack = new Stack<string>("google");
@@ -80,3 +81,38 @@ describe("Queue", () => {
     });
 });
 
+describe("Queues & Stacks Problems", () => {
+    describe("Implement queue using stacks", () => {
+        it("should push to the queue and print values of the queue", () => {
+            const myQueue = new MyQueue();
+            myQueue.push(1);
+            myQueue.push(2);
+            myQueue.push(3);
+            expect(myQueue.print()).toEqual([3, 2, 1]);
+        });
+
+        it("should remove an item from the front of the queue and return it", () => {
+            const myQueue = new MyQueue();
+            myQueue.push(1);
+            myQueue.push(2);
+            expect(myQueue.pop()).toBe(1);
+            expect(myQueue.print()).toEqual([2]);
+        });
+
+        it("should return the element at the front of the queue", () => {
+            const myQueue = new MyQueue();
+            myQueue.push(1);
+            myQueue.push(2);
+            expect(myQueue.peek()).toBe(1);
+        });
+
+        it("should return true if the queue is empty, false otherwise", () => {
+            const myQueue = new MyQueue();
+            myQueue.push(1);
+            myQueue.pop();
+            expect(myQueue.empty()).toBe(true);
+            myQueue.push(1);
+            expect(myQueue.empty()).toBe(false);
+        });
+    });
+});
