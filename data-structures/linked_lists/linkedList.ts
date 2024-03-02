@@ -1,16 +1,13 @@
 import { Nullable, Node } from "../../utils/types";
+import { Print } from "../../utils/print";
 
-class LinkedList<T> {
-    private head: Nullable<Node<T>>;
+class LinkedList<T> extends Print<T>  {
     private tail: Node<T>;
     private length: number;
 
     constructor(value: T) {
-        this.head = {
-            value,
-            next: null
-        };
-
+        super();
+        this.head = new Node(value);
         this.tail = this.head;
         this.length = 1;
     }
@@ -131,19 +128,6 @@ class LinkedList<T> {
         this.head = firstNode;
 
         return this;
-    }
-
-    public printList() {
-        const array = [];
-
-        let currentNode: Nullable<Node<T>> = this.head;
-
-        while (currentNode !== null) {
-            array.push(currentNode.value);
-            currentNode = currentNode.next;
-        }
-
-        return array;
     }
 }
 

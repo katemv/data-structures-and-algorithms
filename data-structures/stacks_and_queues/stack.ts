@@ -1,4 +1,5 @@
-import { Nullable, Node } from "../../utils/types";
+import { Node } from "../../utils/types";
+import { Print } from "../../utils/print";
 
 /**
     * Can be implemented with both Array and LinkedList
@@ -10,55 +11,42 @@ import { Nullable, Node } from "../../utils/types";
         * -- extra memory allocated for pointers
 **/
 
-class Stack<T> {
-    private top: Nullable<Node<T>>;
+class Stack<T> extends Print<T> {
     private length: number;
 
     constructor(value: T) {
-        this.top = new Node(value);
-        this.length = 0;
+        super();
+        this.head = new Node(value);
+        this.length = 1;
     }
 
     public peek() {
-        if (this.top) {
-            return this.top.value;
+        if (this.head) {
+            return this.head.value;
         }
 
         return null;
     }
 
     public push(value: T) {
-        const temp = this.top;
-        this.top = new Node(value);
-        this.top.next = temp;
+        const temp = this.head;
+        this.head = new Node(value);
+        this.head.next = temp;
         this.length ++;
     }
 
     public pop() {
-        if (this.top?.next) {
-            this.top = this.top.next;
+        if (this.head?.next) {
+            this.head = this.head.next;
             this.length --;
         } else {
-            this.top = null;
+            this.head = null;
             this.length = 0;
         }
     }
 
     public isEmpty() {
         return this.length === 0;
-    }
-
-    public print() {
-        const array = [];
-
-        let currentNode: Nullable<Node<T>> = this.top;
-
-        while (currentNode !== null) {
-            array.push(currentNode.value);
-            currentNode = currentNode.next;
-        }
-
-        return array;
     }
 }
 

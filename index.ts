@@ -1,15 +1,8 @@
+import LinkedList from "./data-structures/linked_lists/linkedList";
 
-import Stack from "./data-structures/stacks_and_queues/stack";
-
-
-const myStack = new Stack("google");
-
-myStack.push("udemy");
-myStack.push("discord");
-myStack.pop();
-myStack.pop();
-myStack.pop();
-
-console.log("isEmpty", myStack.isEmpty());
-console.log(myStack.print());
+const list = new LinkedList(0);
+list.append(1);
+list.append(2);
+list.reverse();
+console.log(list.print());
 

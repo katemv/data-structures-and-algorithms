@@ -12,31 +12,31 @@ describe("LinkedList", () => {
     })
 
     it("should print values of the list", () => {
-        expect(myLinkedList.printList()).toEqual([5, 10, 16, 1]);
+        expect(myLinkedList.print()).toEqual([5, 10, 16, 1]);
     });
 
     it("should append a value at the end of the list", () => {
         myLinkedList.append(99);
-        expect(myLinkedList.printList()).toEqual([5, 10, 16, 1, 99]);
+        expect(myLinkedList.print()).toEqual([5, 10, 16, 1, 99]);
     });
 
     it("should prepend a value at the beginning of the list", () => {
         myLinkedList.prepend(99);
-        expect(myLinkedList.printList()).toEqual([99, 5, 10, 16, 1]);
+        expect(myLinkedList.print()).toEqual([99, 5, 10, 16, 1]);
     });
 
     it("should insert a value at the given index", () => {
         myLinkedList.insert(2, 99);
-        expect(myLinkedList.printList()).toEqual([5, 10, 99, 16, 1]);
+        expect(myLinkedList.print()).toEqual([5, 10, 99, 16, 1]);
     });
 
     it("should remove a value at the given index", () => {
         myLinkedList.remove(2);
-        expect(myLinkedList.printList()).toEqual([5, 10, 1]);
+        expect(myLinkedList.print()).toEqual([5, 10, 1]);
     });
 
     it("should reverse the list", () => {
-        expect(myLinkedList.reverse().printList()).toEqual([1,16,10,5]);
+        expect(myLinkedList.reverse().print()).toEqual([1,16,10,5]);
     });
 });
 
@@ -47,6 +47,6 @@ describe("LinkedList Problems", () => {
         list.append(3);
         list.append(4);
         list.append(5);
-        expect(removeNthFromEnd(list, 2)?.printList()).toEqual([1,2,3,5]);
+        expect(removeNthFromEnd(list, 2)?.print()).toEqual([1,2,3,5]);
     });
 });

@@ -1,4 +1,5 @@
 import Stack from "./stack";
+import Queue from "./queue";
 
 describe("Stack", () => {
     let myStack = new Stack<string>("google");
@@ -42,3 +43,40 @@ describe("Stack", () => {
         expect(myStack.isEmpty()).toBe(false);
     });
 });
+
+describe("Queue", () => {
+    let myQueue = new Queue<string>("Joy");
+
+    beforeEach(() => {
+        myQueue = new Queue("Joy");
+        myQueue.enqueue("Matt");
+        myQueue.enqueue("Pavel");
+    })
+
+    it("should print values of the queue", () => {
+        expect(myQueue.print()).toEqual(["Joy", "Matt", "Pavel"]);
+    });
+
+    it("should enqueue an item", () => {
+        myQueue.enqueue("Samir");
+        expect(myQueue.print()).toEqual(["Joy", "Matt", "Pavel", "Samir"]);
+        expect(myQueue.getLength()).toBe(4);
+        expect(myQueue.peek()?.value).toBe("Joy");
+    });
+
+    it("should dequeue an item", () => {
+        myQueue.dequeue();
+        expect(myQueue.print()).toEqual(["Matt", "Pavel"]);
+        expect(myQueue.getLength()).toBe(2);
+        expect(myQueue.peek()?.value).toBe("Matt");
+    });
+
+    it("should get length", () => {
+        expect(myQueue.getLength()).toBe(3);
+    });
+
+    it("should get the first item in queue", () => {
+        expect(myQueue.peek()?.value).toBe("Joy");
+    });
+});
+
