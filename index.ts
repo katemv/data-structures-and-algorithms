@@ -1,10 +1,22 @@
-import BinarySearchTree from "./data-structures/trees/binary-search-tree";
+import Graph from "./data-structures/graphs/graph";
 
-const tree = new BinarySearchTree();
+const graph = new Graph();
 
-tree.insert(9);
-tree.insert(4);
-tree.insert(6);
-tree.insert(20);
+graph.addVertex("0");
+graph.addVertex("1");
+graph.addVertex("2");
+graph.addVertex("3");
+graph.addVertex("4");
+graph.addVertex("5");
+graph.addVertex("6");
 
-console.log(tree.print());
+graph.addEdge("3", "1");
+graph.addEdge("3", "4");
+graph.addEdge("4", "2");
+graph.addEdge("4", "5");
+graph.addEdge("1", "2");
+graph.addEdge("1", "0");
+graph.addEdge("0", "2");
+graph.addEdge("6", "5");
+
+console.log(graph.showConnections());
