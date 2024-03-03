@@ -3,9 +3,11 @@ export type Nullable<T> = T | null;
 export class Node<T> {
     public value: T;
     public next: Nullable<Node<T>>;
+    public previous?: Nullable<Node<T>>;
 
     constructor(value: T) {
         this.value = value;
+        this.previous = null;
         this.next = null;
     }
 }

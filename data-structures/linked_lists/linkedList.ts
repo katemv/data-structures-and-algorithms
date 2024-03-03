@@ -2,8 +2,8 @@ import { Nullable, Node } from "../../utils/types";
 import Print from "../../utils/print";
 
 class LinkedList<T> extends Print<T>  {
-    private tail: Node<T>;
-    private length: number;
+    public tail: Node<T>;
+    public length: number;
 
     constructor(value: T) {
         super();
@@ -89,7 +89,7 @@ class LinkedList<T> extends Print<T>  {
     }
 
     // O(n)
-    private traverseToIndex(index: number): Nullable<Node<T>> {
+    protected traverseToIndex(index: number): Nullable<Node<T>> {
         let currentNode: Nullable<Node<T>> = this.head;
         let counter = 0;
 
