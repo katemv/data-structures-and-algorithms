@@ -1,8 +1,10 @@
-import LinkedList from "./data-structures/linked_lists/linkedList";
+import BinarySearchTree from "./data-structures/trees/binary-search-tree";
 
-const list = new LinkedList(0);
-list.append(1);
-list.append(2);
-list.reverse();
-console.log(list.print());
+const tree = new BinarySearchTree();
 
+tree.insert(9);
+tree.insert(4);
+tree.insert(6);
+tree.insert(20);
+
+console.log(tree.print());
